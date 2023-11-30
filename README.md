@@ -19,7 +19,7 @@ To run the script, execute the following command:
 
 ```bash
 
-python m365-fatigue.py --user <username> [--password <password>] [--interval <seconds>] [--fireprox <fireprox_url>]
+python m365-fatigue.py --user <username> [--password <password>] [--interval <seconds> (default: 60)]
 ````
 
 Replace <username> with your Microsoft 365 username. The password can be provided directly after the --password flag, or the script will prompt for it if not supplied.
