@@ -33,7 +33,7 @@ The fireprox implementation is yet not finished and may or may not be implemente
 # Notes
 This script utilizes Selenium, which requires a compatible WebDriver (in this case, Chrome WebDriver... but you can change it towards something else if you need to).
 
-License
+# License
 This project is licensed under the [MIT License](https://chat.openai.com/c/LICENSE).
 
 # Credits & Acknowledgements
