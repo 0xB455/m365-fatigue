@@ -15,7 +15,7 @@ It keeps bombing the user with MFA requests and stores the access_token once the
    pip install -r requirements.txt
     ```
 
-Running the Script
+### Running the Script
 To run the script, execute the following command:
 
 ```bash
