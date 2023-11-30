@@ -30,7 +30,7 @@ The --interval flag allows you to set the polling interval in seconds (default i
 # TODO
 The fireprox implementation is yet not finished and may or may not be implemented in the future...
 
-Notes
+# Notes
 This script utilizes Selenium, which requires a compatible WebDriver (in this case, Chrome WebDriver... but you can change it towards something else if you need to).
 
 License
