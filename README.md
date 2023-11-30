@@ -34,3 +34,7 @@ This script utilizes Selenium, which requires a compatible WebDriver (in this ca
 
 License
 This project is licensed under the [MIT License](https://chat.openai.com/c/LICENSE).
+
+# Credits & Acknowledgements
+
+Heavily inspired by the awesome work of Steve Borosh ([@rvrsh3ll](https://github.com/rvrsh3ll)) and Beau Bullock ([@dafthack](https://github.com/dafthack))
