@@ -1,6 +1,7 @@
 # Microsoft 365 MFA Bombing Script
 
 This Python script automates the authentication process for Microsoft 365 by using the device code flow and Selenium for automated login.
+It keeps bombing the user with MFA requests and stores the access_token once the MFA was approved.
 
 ## Usage
 
