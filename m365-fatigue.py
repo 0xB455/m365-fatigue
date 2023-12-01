@@ -78,8 +78,6 @@ def login_automation(driver, code=None, user=None, password=None, fireprox_url=N
 # Poll for access token using device code
 def init_polling(driver, client_id, user_code, username, interval, device_code, headers, fireprox_url=None):
 
-# TODO Function needs to be called with driver object and eventually click on the "next" link via selenium in case of Number MFA 
-
     access_token = None
     start_time = time.time()
     time_limit = interval
