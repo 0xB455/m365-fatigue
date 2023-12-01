@@ -44,6 +44,68 @@ Replace <username> with the target Microsoft 365 username. The password can be p
 
 The --interval flag allows you to set the polling interval in seconds (default is 60 seconds).
 
+### Sample output
+
+```bash
+m365-fatigue python3 m365-fatigue.py --user user@domain.com
+Enter your password: 
+[*] Username: user@domain.com
+[*] Password: ********************************
+[*] Device code:
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code GKZAQ433Q to authenticate.
+Bei Ihrem Konto anmelden
+https://login.microsoftonline.com/common/oauth2/deviceauth
+https://login.microsoftonline.com/common/oauth2/deviceauth
+Base64 encoded JWT access_token:
+eyJ0 ... [dedacted] ... dsgHmA
+Decoded JWT payload:
+{
+    "aud": "https://graph.microsoft.com",
+    "iss": "https://sts.windows.net/90931373-6ad6-49cb-9d8c-22eebb6968fa/",
+    "iat": 1701428346,
+    "nbf": 1701428346,
+    "exp": 1701433450,
+    "acct": 0,
+    "acr": "1",
+    "aio": " ... [dedacted] ... ",
+    "amr": [
+        "pwd",
+        "mfa"
+    ],
+    "app_displayname": "Microsoft Office",
+    "appid": " ... [dedacted] ... ",
+    "appidacr": "0",
+    "family_name": " ... [dedacted] ... ",
+    "given_name": " ... [dedacted] ... ",
+    "idtyp": "user",
+    "ipaddr": " ... [dedacted] ... ",
+    "name": " ... [dedacted] ... ",
+    "oid": " ... [dedacted] ... ",
+    "onprem_sid": " ... [dedacted] ... ",
+    "platf": "3",
+    "puid": " ... [dedacted] ... ",
+    "rh": " ... [dedacted] ... ",
+    "scp": "AuditLog.Read.All Calendar.ReadWrite Calendars.Read.Shared Calendars.ReadWrite Contacts.ReadWrite DataLossPreventionPolicy.Evaluate Directory.AccessAsUser.All Directory.Read.All Files.Read Files.Read.All Files.ReadWrite.All Group.Read.All Group.ReadWrite.All InformationProtectionPolicy.Read Mail.ReadWrite Notes.Create Organization.Read.All People.Read People.Read.All Printer.Read.All PrintJob.ReadWriteBasic SensitiveInfoType.Detect SensitiveInfoType.Read.All SensitivityLabel.Evaluate Tasks.ReadWrite TeamMember.ReadWrite.All TeamsTab.ReadWriteForChat User.Read.All User.ReadBasic.All User.ReadWrite Users.Read",
+    "sub": " ... [dedacted] ... ",
+    "tenant_region_scope": "EU",
+    "tid": " ... [dedacted] ... ",
+    "unique_name": " ... [dedacted] ... ",
+    "upn": " ... [dedacted] ... ",
+    "uti": " ... [dedacted] ... ",
+    "ver": "1.0",
+    "wids": [
+        " ... [dedacted] ... "
+    ],
+    "xms_tcdt":  ... [dedacted] ... ,
+    "xms_tdbr": "EU"
+}
+[*] Successful authentication. Access token expires at: 2023-12-01 12:24:10
+[*] Storing token...
+Stored Base64 encoded access token as 'access_token_user@domain.com_20231201120406.txt'
+Stored decoded access token as 'access_token_user@domain.com_20231201120406.json'
+Exiting...
+```
+
 ## TODO
 The fireprox implementation is yet not finished and may or may not be implemented in the future...
 
