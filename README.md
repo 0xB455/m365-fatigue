@@ -17,8 +17,8 @@ Microsoft used to offer different MFA authentication mechanisms within their aut
 - Number Matching
 - Passwordless Sign-in
 
-As of May 2023 Microsoft mostly disarmed this fatigue bombing attacks by enforcing the number matching mechanism which require the user to manually enter a two digit number which is presented in the browser as part of the login flow.
-However it still may prove usefull nowadays in certain scenarios which I leave up to your creativity ;-)
+As of May 2023 Microsoft mostly disarmed this fatigue bombing attacks by enforcing the number matching mechanism which require the user to manually enter a two digit number which is presented in the browser as part of the login flow. Generally speaking that breaks simple bombing flows as only the victim is posession of the matching number. However one could still retreive the information via real-time social engineering.
+If you find environments that still rely on classic push notifications, this attack vector should still work fine. Also I leave it to your own creativity to find applicable scenarios ;-)
 
 ## Usage
 
