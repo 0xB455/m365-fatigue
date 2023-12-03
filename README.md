@@ -6,7 +6,7 @@ It keeps bombing the user with MFA requests and stores the access_token once the
 It is intended to be used in Social Engineering / Red-Team / Pentesting scenarios when targeting O365/MS-Online users in Azure (now called Entra ID).
 
 In case a username & password combination was compromised it can be used to flood the authenticator app with authentication requests.
-Once the second factor has been approved the valid JWT access_token will be stored in decoded and encoded format locally. The token can be reused in other tools like [TokenTactics](https://github.com/f-bader/TokenTacticsV2), [GraphRunner|(https://github.com/dafthack/GraphRunner) or manual requesting different endpoints in Azure...
+Once the second factor has been approved the valid JWT access_token will be stored in decoded and encoded format locally. The token can be reused in other tools like [TokenTactics](https://github.com/f-bader/TokenTacticsV2), [GraphRunner](https://github.com/dafthack/GraphRunner) or manual requesting different endpoints in Azure...
 
 ## Applicability
 Microsoft used to offer different MFA authentication mechanisms within their authenticator app like:
