@@ -80,7 +80,7 @@ def init_polling(driver, client_id, user_code, username, interval, device_code, 
 
     access_token = None
     start_time = time.time()
-    time_limit = interval
+    time_limit = float(interval)
     remaining_time = time_limit
 
     while time.time() - start_time < time_limit:
